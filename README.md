@@ -32,3 +32,5 @@ I am using Java11 and the JUnit testing framework.
 **Other Notes:**
 - Many (the majority) of my functions relied on user input from a scanner. Due to the length restrictions, there was no way for me to properly test all of these methods without violating the length requirement. I thus focused the majority of my tests on other types of methods.
 - The conversation I had with ChatGPT may seem long but this is simply due to the fact that I had to send the entire codebase to it multiple times throughout our conversations (this is how I dealt with context issues) feel free to skip over that when reading the log.
+- To use my code (ChatGPT's code), clone the repository and run `ChatRPG.java`
+- Have fun!
