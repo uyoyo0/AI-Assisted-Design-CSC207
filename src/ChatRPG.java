@@ -19,13 +19,13 @@ class CommandProcessor {
     private static final int WARRIOR_EXTRA_DAMAGE_MAX = 15;
     private static final Random random = new Random();
 
-    private Player player;
-    private Monster[] monsters;
+    private final Player player;
+    private final Monster[] monsters;
     private Companion[] companions;
-    private Shop shop;
-    private Room room;
+    private final Shop shop;
+    private final Room room;
 
-    private Scanner scanner;
+    private final Scanner scanner;
 
     /**
      * Constructs a CommandProcessor object with the provided game entities and initializes the scanner.
@@ -121,11 +121,11 @@ class CommandProcessor {
             System.out.println("2. Run");
 
             int choice = scanner.nextInt();
-
+            int monsterAttack;
             switch (choice) {
                 case 1:
                     int playerAttack = random.nextInt(player.getDamage());
-                    int monsterAttack = random.nextInt(monster.getDamage());
+                    monsterAttack = random.nextInt(monster.getDamage());
 
                     System.out.println("You attack the " + monster.getName() + " for " + playerAttack + " damage.");
                     monster.takeDamage(playerAttack);
@@ -172,7 +172,7 @@ class CommandProcessor {
     /**
      * Allows the player to recruit a companion to join their journey.
      */
-    private void recruitCompanion() {
+    protected void recruitCompanion() {
         System.out.println("\nYou found someone willing to join your journey!");
 
         if (player.hasMaxCompanions()) {
@@ -316,10 +316,10 @@ public class ChatRPG {
  * Represents a Monster in the game.
  */
 class Monster implements GameEntity {
-    private String name;
+    private final String name;
     private int health;
-    private int damage;
-    private int goldReward;
+    private final int damage;
+    private final int goldReward;
 
     /**
      * Creates a new Monster with the specified attributes.
@@ -390,7 +390,7 @@ class Monster implements GameEntity {
  * Represents a Player in the game.
  */
 class Player implements GameEntity {
-    private String playerName;
+    private final String playerName;
     private int playerHealth;
     private int playerDamage;
     private int playerGold;
@@ -587,7 +587,7 @@ class Player implements GameEntity {
  * Represents a companion that can be owned by the player.
  */
 class Companion {
-    private String type;
+    private final String type;
 
     /**
      * Creates a new Companion with the specified type.
@@ -612,10 +612,10 @@ class Companion {
  * Represents an item available in the shop.
  */
 class ShopItem {
-    private String name;
-    private int price;
-    private int damage;
-    private int defense;
+    private final String name;
+    private final int price;
+    private final int damage;
+    private final int defense;
 
     /**
      * Constructs a new ShopItem object with the specified properties.
@@ -777,7 +777,7 @@ class Shop {
  * Represents a room containing different locations or areas in the game world.
  */
 class Room {
-    private String[] rooms;
+    private final String[] rooms;
     /**
      * Constructs a new Room object and initializes the available room names.
      */
@@ -794,5 +794,3 @@ class Room {
         return rooms;
     }
 }
-
-
