@@ -22,11 +22,12 @@ As a player, I want to navigate through various rooms, encounter monsters, recru
 I am using Java11 and the JUnit testing framework.
 
 **Potential Code Smells**
-- **Error Handling:** The code doesn't seem to include robust error handling for unexpected input, exceptions, or edge cases during user interaction. Adding appropriate error handling mechanisms could enhance user experience and program stability. - I could not sufficiently deal with this due to length requirements.
+- **Error Handling:** The code doesn't seem to include robust error handling for unexpected input, exceptions, or edge cases during user interaction. Adding appropriate error handling mechanisms could enhance user experience and program stability.
+- I could not sufficiently deal with this due to length requirements.
+
   
 **Clean Architecture/SOLID violations:** There are no violations of CA or SOLID
   
-Additional notes:
 
 **Other Notes:**
 - Many (the majority) of my functions relied on user input from a scanner. Due to the length restrictions, there was no way for me to properly test all of these methods without violating the length requirement. I thus focused the majority of my tests on other types of methods.
